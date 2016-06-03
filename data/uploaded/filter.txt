@@ -1,0 +1,7 @@
+﻿<title>AfterClass 数据查看</title>
+<LINK href="/favicon.ico" type="image/x-icon" rel=icon>
+<LINK href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
+------AfterClass 数据查看------
+{"name":"示例","cell":"110","emil":"address@example.com","quxi":"海淀","schl":"清华大学附属中学上地学校","jian":"示例\n换行\n换行"}
+
+<i>以上<b>仅仅</b>为示例！！！</i><hr />

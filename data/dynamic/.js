@@ -1,0 +1,1 @@
+function(req,resp){resp.writeHead(200,{'Content-Type': 'text/html'});resp.write('<script>location.href="/index"</script>');resp.end();}

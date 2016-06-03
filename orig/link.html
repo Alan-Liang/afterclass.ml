@@ -1,0 +1,33 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>分享工具</title>
+<script>
+window.do=function(){
+	var a=[document.getElementById('url').value,
+	       document.getElementById('title').value];
+	if(!a[0]||!a[1])return false;
+	document.title=a[1];
+	history.pushState([],'',a[0]);
+	return false;
+};
+</script>
+<meta charset="utf-8">
+</head>
+<body>
+<h1>分享工具</h1>
+URL:<input id="url" />
+<br />
+标题:<input id="title" />
+<br />
+<input type="button" value="提交" onclick="return window.do();" />
+<script>
+var el=location.href.split('p=');
+el=el[1];
+if(el){
+	el=el.split('&')[0];
+	document.getElementById('url').value=el;
+}
+</script>
+</body>
+</html>

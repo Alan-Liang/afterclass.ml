@@ -1,0 +1,319 @@
+﻿<!DOCTYPE HTML>
+<html>
+<script>
+//!!!IMPORTANT!!!IMPORTANT!!!
+window.__domain="http://afterclass.ml";//MAIN DOMAIN
+//!!!IMPORTANT!!!IMPORTANT!!!
+</script>
+<head>
+<title>活动注册</title>
+<LINK href="/favicon.ico" type="image/x-icon" rel=icon>
+<LINK href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<meta name="viewport" content="width=540" />
+<style>
+body{
+	background-color:#EEE;
+}
+::selection{
+	color:#F00;
+	background-color:#0FF;
+}
+img::selection,#header::selection{
+	color:#000;
+	background-color:transparent;
+}
+#header{
+	position:fixed;
+	top:0px;
+	left:0px;
+	background:#AAD;
+	width:100%;
+	height:1.3em;
+	font-size:36px;
+	opacity:0.8;
+	font-family:Verdana, Geneva, sans-serif;
+	text-align:center;
+}
+.aftericon{
+	position:fixed;
+	background:url('logo.svg') center no-repeat;
+	top:0;left:30px;
+	width:3em;height:3em;
+}
+#content{
+	margin-top:46.8px;
+	width:100%;
+	font-size:16px;
+	/*text-align:center;*/
+}
+hr{
+	width:100%;
+	height:4px;
+	background:#000;
+}
+img{width:100%;}
+.text0{
+	font-family:黑体;
+	font-size:90px;
+	text-align:center;
+}
+.text{
+	font-family:黑体;
+	font-size:30px;
+}
+/*link styles*/
+a:link{
+	color: rgb(255, 136, 48);
+	text-decoration: none;
+}
+a:visited{
+	color: rgb(255, 136, 48);
+	text-decoration: none;
+}
+a:link:hover,a:visited:hover{
+	color: rgb(255, 0, 0);
+	text-decoration:underline;
+}
+</style>
+<meta charset="utf-8">
+</head>
+<body>
+<style>
+#content{
+	text-align:center;
+}
+.submit{
+	border:2px solid #077;
+	border-radius:5px;
+	width:100px;
+	background:#0CC;
+	color:#F33;
+	font-weight:bold;
+	font-size:40px;
+	cursor:pointer;
+	transition:background 0.2s ease-in;
+	-moz-transition:background 0.2s ease-in; /* Firefox 4 */
+	-webkit-transition:background 0.2s ease-in; /* Safari and Chrome */
+	-o-transition:background 0.2s ease-in; /* Opera */
+}
+.submit-no{
+	border:2px solid #077;
+	border-radius:5px;
+	width:100px;
+	background:#CEE;
+	color:#F33;
+	font-weight:bold;
+	font-size:40px;
+	cursor:wait;
+	transition:background 0.2s ease-out;
+	-moz-transition:background 0.2s ease-out; /* Firefox 4 */
+	-webkit-transition:background 0.2s ease-out; /* Safari and Chrome */
+	-o-transition:background 0.2s ease-out; /* Opera */
+}
+.error{
+	color:#A00;
+	position:relative;
+}
+
+/*TEMPATE: INPUT BY ALAN*/
+.in:hover{
+	border:1px solid #abcff3;
+	box-shadow:inset 0px 0px 5px #abcff3;
+	height:32px;
+}
+
+.in:focus{
+	border:1px solid #6b9bdc;
+	box-shadow:inset 0px 0px 5px #6b9bdc;
+	height:32px;
+}
+.in{
+	height:30px;
+	width:250px;
+}
+.textarea{
+	height:90px;
+}
+.textarea:hover,.textarea:focus{
+	height:92px;
+}
+.errin:hover{
+	border:1px solid #f3abcf;
+	box-shadow:inset 0px 0px 5px #f3abcf;
+	height:32px;
+}
+
+.errin:focus{
+	border:1px solid #dc6b9b;
+	box-shadow:inset 0px 0px 5px #dc6b9b;
+	height:32px;
+}
+</style>
+<div id="header">
+<a class="aftericon" data-href="/"></a>
+活动注册
+</div>
+<div id="content" class="text">
+<hr />
+<a id="erbcname"></a>姓名：<input class="in" data-must="must" data-id="name" />*<a class="error" id="ername"></a><br />
+<a id="erbccell"></a>手机：<input class="in" data-must="celp" data-id="cell" />*<a class="error" id="ercell"></a><br />
+<a id="erbcemil"></a>邮箱：<input class="in" data-must="emil" data-id="emil" />*<a class="error" id="eremil"></a><br />
+<a id="erbcquxi"></a>区县：<select class="in" data-must="must" data-id="quxi"></select>*<a class="error" id="erquxi"></a><br />
+<a id="erbcschl"></a>学校：<select class="in" data-must="must" data-id="schl"></select>*<a class="error" id="erschl"></a><br />
+个人简历：<br />
+<a id="erbcjian"></a>　　　<textarea class="in textarea" data-must="no" data-id="jian"></textarea><a class="error" id="erjian"></a><br />
+*为必填 | 按Ctrl + Enter键提交<br />
+<br />
+<br />
+<span data-submit="" class="submit-no">提交</span>
+</div>
+<script color="0,0,255" src="canvas-nest.min.js"></script>
+<script>
+var links=document.querySelectorAll("a[data-href]");
+for(var i=0;i<links.length;i++){
+	var href=window.__domain+links[i].getAttribute("data-href");
+	links[i].setAttribute("href",href);
+}
+var regexps={	"must":/[^\s]{2,}/,
+		"celp":/^[0-9]{11}$/,
+		"emil":/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/,
+		"no":/$/};
+var inputs=document.querySelectorAll("[data-id]");
+window.__flags={"name":false,"cell":false,"emil":false,"jian":true,"quxi":false,"schl":false};
+var errtip="输入格式错误";
+var errbc ="　　　　　　";
+var onblurblur=function(e){
+	console.time('a');
+	var datamust=e.currentTarget.getAttribute("data-must");
+	var dataid=e.currentTarget.getAttribute("data-id");
+	if(!regexps[datamust].test(e.currentTarget.value)){
+		__flags[dataid]=false;
+		document.getElementById("er"+dataid)
+			.innerHTML=errtip;
+		document.getElementById("erbc"+dataid)
+			.innerHTML=errbc;
+		e.currentTarget.classList.add('errin');
+	}else{
+		__flags[dataid]=true;
+		document.getElementById("er"+dataid)
+			.innerHTML="";
+		document.getElementById("erbc"+dataid)
+			.innerHTML="";
+		e.currentTarget.classList.remove('errin');
+	}
+	checksum();
+	console.timeEnd('a');
+};
+function checksum(){
+	var fl=true;
+	for(i in __flags){
+		if(!__flags[i])fl=false;
+	}
+	if(fl)document.querySelector("[data-submit]").className="submit";
+	else document.querySelector("[data-submit]").className="submit-no";
+	return fl;
+}
+for(var i=0;i<inputs.length;i++){
+	inputs[i].addEventListener("blur",onblurblur);
+	inputs[i].addEventListener("keydown",function(e){
+		if (e.ctrlKey && e.keyCode == 13) {
+			onblurblur(e);
+			e.preventDefault();
+			document.querySelector("[data-submit]").click();
+		}
+	});
+}
+
+
+function post(){
+var podata={};
+for(var i=0;i<inputs.length;i++){
+	podata[inputs[i].getAttribute('data-id')]=inputs[i].value;
+}
+var xhrpost=new XMLHttpRequest();
+xhrpost.open('post','/webapi/register');
+xhrpost.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+xhrpost.send(JSON.stringify(podata));
+if(localStorage.hasOwnProperty('etag')){}
+    //xhr.setRequestHeader('If-None-Match',localStorage.etag);
+xhrpost.onreadystatechange=function() {
+    if(this.readyState!=4) return;
+    if(xhrpost.status==200) { // OK, New data
+        localStorage.cachedpost=xhrpost.response;
+        if(localStorage.cachedpost==JSON.stringify(podata)){alert('数据已提交');postback();}else alert(localStorage.cachedpost);
+    } else if(xhrpost.status==304) { // OK, Cached data
+        if(localStorage.cachedpost==JSON.stringify(podata)){alert('数据已提交');postback();}else alert(localStorage.cachedpost);
+    }
+}
+try{xhrpost.send();}catch(e){console.log(e);}
+}
+function postback(){
+var podata={};
+podata.phone=document.querySelector("[data-id=cell]").value;
+podata.email=document.querySelector("[data-id=emil]").value;
+var xhrpost=new XMLHttpRequest();
+xhrpost.open('post','/webapi/afterreg');
+xhrpost.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+xhrpost.send(JSON.stringify(podata));
+if(localStorage.hasOwnProperty('etag')){}
+    //xhr.setRequestHeader('If-None-Match',localStorage.etag);
+xhrpost.onreadystatechange=function() {
+    if(this.readyState!=4) return;
+    if(xhrpost.status==200) { // OK, New data
+       localStorage.cachedpostback=xhrpost.response;
+       document.querySelector("#content").innerHTML=localStorage.cachedpostback;
+    } else if(xhrpost.status==304) { // OK, Cached data
+       document.querySelector("#content").innerHTML=localStorage.cachedpostback;
+    }
+}
+try{xhrpost.send();}catch(e){console.log(e);}
+}
+document.querySelector("[data-submit]")
+	.addEventListener("click",function(){
+	if(!checksum())return;
+	post();
+});
+
+checksum();
+</script>
+<script>
+//加载学校
+function xx(obj){
+	var quxiobj=document.querySelector("[data-id=\"quxi\"]");
+	var xxobj=document.querySelector("[data-id=\"schl\"]");
+	var _node =document.createElement("option");
+	_node.innerHTML="";
+	quxiobj.appendChild(_node);
+	for(i in obj){
+		var _node =document.createElement("option");
+		_node.innerHTML=i;
+		quxiobj.appendChild(_node);
+	}
+	quxiobj.addEventListener("change",function(e){
+		xxobj.innerHTML="<option></option>";
+		for(i in obj[e.currentTarget.value]){
+			var _node =document.createElement("option");
+			_node.innerHTML=obj[e.currentTarget.value][i].text;
+			xxobj.appendChild(_node);
+		}
+	});
+}
+var xhr=new XMLHttpRequest();
+xhr.open('get','./schooldata.json');
+if(localStorage.hasOwnProperty('etag')){}
+    //xhr.setRequestHeader('If-None-Match',localStorage.etag);
+xhr.onreadystatechange=function() {
+    if(this.readyState!=4) return;
+    if(xhr.status==200) { // OK, New data
+        localStorage.etag=xhr.getResponseHeader("ETag");
+        localStorage.cached=xhr.response;
+        xx(JSON.parse(localStorage.cached));
+    } else if(xhr.status==304) { // OK, Cached data
+        xx(JSON.parse(localStorage.cached));
+    }
+}
+xhr.send();
+
+</script>
+</body>
+</html>

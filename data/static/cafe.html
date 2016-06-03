@@ -1,0 +1,121 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+//!!!IMPORTANT!!!IMPORTANT!!!
+window.__domain="http://afterclass.ml";//MAIN DOMAIN
+//!!!IMPORTANT!!!IMPORTANT!!!
+</script>
+<title>After Class&trade; coffee making</title>
+<LINK href="/favicon.ico" type="image/x-icon" rel=icon>
+<LINK href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<style>
+body{
+	background-color:#EEE;
+}
+::selection{
+	color:#F00;
+	background-color:#0FF;
+}
+img::selection,#header::selection{
+	color:#000;
+	background-color:transparent;
+}
+#header{
+	position:fixed;
+	top:0px;
+	left:0px;
+	background:#AAD;
+	width:100%;
+	height:1.3em;
+	font-size:36px;
+	opacity:0.8;
+	font-family:Verdana, Geneva, sans-serif;
+	text-align:center;
+}
+.aftericon{
+	position:fixed;
+	background:url('logo.svg') center no-repeat;
+	top:0;left:30px;
+	width:3em;height:3em;
+}
+#content{
+	margin-top:46.8px;
+	width:100%;
+	font-size:16px;
+	/*text-align:center;*/
+}
+hr{
+	width:100%;
+	height:4px;
+	background:#000;
+}
+img{width:100%;}
+.text0{
+	font-family:黑体;
+	font-size:90px;
+	text-align:center;
+}
+.text{
+	font-family:黑体;
+	font-size:30px;
+}
+/*link styles*/
+a:link{
+	color: rgb(255, 136, 48);
+	text-decoration: none;
+}
+a:visited{
+	color: rgb(255, 136, 48);
+	text-decoration: none;
+}
+a:link:hover,a:visited:hover{
+	color: rgb(255, 0, 0);
+	text-decoration:underline;
+}
+</style>
+</head>
+<body>
+<div id="header">
+<a class="aftericon" data-href="/"></a>
+After Class&trade; Coffee Making
+</div>
+<div id="content">
+<hr />
+<img src="images/page1.jpg" />
+<hr />
+<img src="images/page2.png" />
+<hr />
+<img src="images/page3.png" />
+<hr />
+<img src="images/page4.png" />
+<hr />
+<img src="images/page5.svg" />
+<hr />
+<img src="images/page6.jpg" />
+<hr />
+<img src="images/page7.png" />
+<hr />
+<h1 class="text0">泥萌关心的(￣ˇ￣)/</h1>
+<span class="text">体验地点：book&cafe（中国人民大学出版社读者服务部内咖啡厅，中关村大街31号）<br />
+时间：双休日上下午（待协商）<br /><br />
+活动举办方：After Class学生公司、book&cafe咖啡店<br />
+支付方式：自选<br />
+报名方式：
+1. 微信（13552605939）（晚上9:30之后）<br />
+2. 电话:15911131967/13522706732/15810706283/13552605939<br />
+3. 面基：高一（12）班 俞安彤 李海天          高一（13）班  刘扬 叶哲楷<br />
+4. <a data-href="/regact">点击此处</a> 
+</span>
+<hr />
+</div>
+<script color="0,0,255" src="http://github.atool.org/canvas-nest.min.js"></script>
+<script>
+var links=document.querySelectorAll("a[data-href]");
+for(var i=0;i<links.length;i++){
+	var href=window.__domain+links[i].getAttribute("data-href");
+	links[i].setAttribute("href",href);
+}
+</script>
+</body>
+</html>
