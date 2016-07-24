@@ -1,0 +1,6 @@
+{
+  "name": "afterclass.ml",
+  "tagline": "http://afterclass.ml/",
+  "body": "# Bug List\r\n1. pc\r\n    1. 未来西点师\r\n    2. 404 page\r\n2. mobile\r\n    1. regact - google checkbox\r\n        1. does not like tick\r\n        2. have about 10 secs delay\r\n    2. general\r\n        1. logo sometimes too big\r\n        2. e.preventDefault()",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
